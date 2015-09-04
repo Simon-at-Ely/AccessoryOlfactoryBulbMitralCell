@@ -1,55 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level2/ChannelML_v1.8.1.xsd" units="Physiological Units">
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="ka">
 
-    <meta:notes>ChannelML file containing a single Channel description</meta:notes>
+    <notes>ChannelML file based on parameters recorded in the lab of M. Spehr RWTH Aachen</notes>
 
+    <ionChannel id="na" conductance="10pS" type="ionChannelHH" species="na">
 
-    <channel_type name="Nav_iAMC" density="yes">
-        
-        <status value="stable">
-            <meta:comment>Sodium current from an intrinsically oscillating AOB mitral cell from parameters recorded in the lab of M. Spehr RWTH Aachen</meta:comment>
-            <meta:contributor>
-                <meta:name>Simon O'Connor</meta:name>
-            </meta:contributor>
-        </status>
+	<notes>Sodium Fast conductance (transient, inactivating) from an intrinsically oscillating AOB mitral cell from parameters recorded in the lab of M. Spehr RWTH Aachen</notes>
 
-        <meta:notes>Na Channel</meta:notes>
-        
-        <meta:authorList>
-            <meta:modelTranslator>
-                <meta:name>Simon O'Connor</meta:name>
-                <meta:institution>UH</meta:institution>    
-                <meta:email>simon.oconnor - at - btinternet.com</meta:email>
-            </meta:modelTranslator>
-        </meta:authorList>
+	<annotation>
+	    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<rdf:Description rdf:about="na">
 
-        <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="120" default_erev="50" charge="1">
- 
-                <!--q10_settings q10_factor="2" experimental_temp="24"/-->
+		    <bqmodel:isDescribedBy xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+			<rdf:Bag>
+			    <rdf:li>??</rdf:li>
+			    <rdf:li rdf:resource="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=??"/>
+			</rdf:Bag>
+		    </bqmodel:isDescribedBy>
 
-	    
-	  <gate id="m" type="gateHHtauInf" instances="?">
-	      <timeCourse type="??"/>
-	          <!--1/((exp((V+A)/B))+(exp((-V-C)/B))) A=?? B=?? C=?? -->
+		    <bqbiol:isVersionOf xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+			<rdf:Bag>
+			    <rdf:li>Na channels</rdf:li>
+			    <rdf:li rdf:resource="http://senselab.med.yale.edu/senselab/NeuronDB/??"/>
+			</rdf:Bag>
+		    </bqbiol:isVersionOf>
 
-	      <steadyState type="HHSigmoidVariable" rate="1" scale="0.0198V" midpoint="-0.036V"/>
-	  </gate>
+		</rdf:Description>
+	    </rdf:RDF>
+	</annotation>
+
+	<gate id="m" type="gateHHtauInf" instances="?">
+	    <timeCourse type="na_m_tau_tau"/>
+	    <steadyState type="HHSigmoidVariable" rate="1" scale="19.8mV" midpoint="-36mV"/>
+	</gate>
+
+	<gate id="h" type="gateHHtauInf" instances="?">
+	    <timeCourse type="na_h_tau_tau"/>
+	    <steadyState type="HHSigmoidVariable" rate="1" scale="-8.4mV" midpoint="-68.8mV"/>
+	</gate>
+
+    </ionChannel>
 
 	  <gate id="h" type="gateHHtauInf" instances="?">
 	      <timeCourse type="??"/>
-	          <!--1/((exp((V+A)/B))+(exp((-V-C)/B))) A=-42.57 B=70.82 C=107.53-->
-
-	      <steadyState type="HHSigmoidVariable" rate="1" scale="-0.0084V" midpoint="-0.0688V"/>
+	          <!--1/((exp((V-42.57)/70.82))+(exp((-V-107.53)/70.82))) A=-42.57 B=70.82 C=107.53-->
 	  </gate>
 
-  
-        </current_voltage_relation>        
-        
-            <!--impl_prefs>
-            <table_settings max_v="100" min_v="-100" table_divisions="2000"/>
-        </impl_prefs-->
 
-        
-        
-    </channel_type>
-</channelml>
+    <ComponentType name="na_m_tau_tau" extends="baseVoltageDepTime">
+	<Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+	<Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+
+	<Dynamics>
+	    <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+	    <DerivedVariable name="t" exposure="t" dimension="time" value="1/((exp((V+A)/B))+(exp((-V-C)/B))) * TIME_SCALE"/>
+	</Dynamics>
+
+    </ComponentType>
+
+    <ComponentType name="ka_h_tau_tau" extends="baseVoltageDepTime">
+	<Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+	<Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+
+	<Dynamics>
+	    <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+	    <ConditionalDerivedVariable name="t" exposure="t" dimension="time">
+		  <Case condition="V .lt. ( ? )" value="1/((exp((V-42.57)/70.82))+(exp((-V-107.53)/70.82))) * TIME_SCALE"/>
+		  <Case value="( ?) * TIME_SCALE"/>
+	    </ConditionalDerivedVariable>
+	</Dynamics>
+
+    </ComponentType>
+
+</neuroml>
