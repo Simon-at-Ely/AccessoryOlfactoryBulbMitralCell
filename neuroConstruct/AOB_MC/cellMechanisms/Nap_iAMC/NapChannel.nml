@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="ka">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" 
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	 xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" 
+	 id="Nap_iAMC">
 
-    <notes>ChannelML file based on parameters recorded in the lab of M. Spehr RWTH Aachen</notes>
+    <notes>AOB Mitral Cell Persistent Sodium ion Channel</notes>
 
-    <ionChannel id="na" conductance="10pS" type="ionChannelHH" species="na">
+    <ionChannel id="Nap_iAMC" conductance="10pS" type="ionChannelHH" species="na">
 
-	<notes>Sodium Fast conductance (transient, inactivating) from an intrinsically oscillating AOB mitral cell from parameters recorded in the lab of M. Spehr RWTH Aachen</notes>
+	<notes>Persistent Sodium conductance from an intrinsically oscillating AOB mitral cell from parameters recorded in the lab of M. Spehr RWTH Aachen</notes>
 
 	<annotation>
 	    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -30,12 +33,12 @@
 	</annotation>
 
 	<gate id="m" type="gateHHtauInf" instances="?">
-	    <timeCourse type="na_m_tau_tau"/>
+	    <timeCourse type="nap_m_tau_tau"/>
 	    <steadyState type="HHSigmoidVariable" rate="1" scale="19.8mV" midpoint="-36mV"/>
 	</gate>
 
 	<gate id="h" type="gateHHtauInf" instances="?">
-	    <timeCourse type="na_h_tau_tau"/>
+	    <timeCourse type="nap_h_tau_tau"/>
 	    <steadyState type="HHSigmoidVariable" rate="1" scale="-8.4mV" midpoint="-68.8mV"/>
 	</gate>
 
@@ -47,7 +50,7 @@
 	  </gate>
 
 
-    <ComponentType name="na_m_tau_tau" extends="baseVoltageDepTime">
+    <ComponentType name="nap_m_tau_tau" extends="baseVoltageDepTime">
 	<Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
 	<Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
 
@@ -58,7 +61,7 @@
 
     </ComponentType>
 
-    <ComponentType name="ka_h_tau_tau" extends="baseVoltageDepTime">
+    <ComponentType name="nap_h_tau_tau" extends="baseVoltageDepTime">
 	<Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
 	<Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
 

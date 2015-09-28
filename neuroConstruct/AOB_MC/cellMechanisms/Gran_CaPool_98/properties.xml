@@ -11,12 +11,12 @@ Note the following:
    Mechanism Type should only have values: Channel mechanism, Synaptic mechanism, Ion concentration, Point process, Gap junction
 
 </comment>
-<entry key="Mechanism Name">Nav_iAMC</entry>
-<entry key="NEURON mapping">ChannelML_v1.8.1_NEURONmod.xsl</entry>
+<entry key="Mechanism Name">Gran_CaPool_98</entry>
 <entry key="Mechanism Model">ChannelML based process</entry>
-<entry key="Mechanism Type">NeuroML 2 ion channel</entry>
-<entry key="Implementation method">NeuroML 2 Component</entry>
+<entry key="Mechanism Type">Ion concentration</entry>
 <entry key="NEURON file requires compilation">true</entry>
-<entry key="ChannelML file">NaChannel.nml</entry>
-<entry key="Description">AOB Mitral Cell Fast Sodium ion Channel</entry>
+<entry key="Implementation method">ChannelML based Cell Mechanism</entry>
+<entry key="ChannelML file">CaPool.xml</entry>
+<entry key="NEURON mapping">ChannelML_v1.8.1_NEURONmod.xsl</entry>
+<entry key="Description">An expontially decaying pool of calcium</entry>
 </properties>
