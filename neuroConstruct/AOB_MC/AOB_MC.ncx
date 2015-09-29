@@ -785,7 +785,7 @@ part of NeuroML or any standardised XML specification. -->
     <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings1">
      <void property="amp">
       <void property="fixedNum">
-       <float>5.0</float>
+       <float>0.5</float>
       </void>
      </void>
      <void property="cellGroup">
@@ -800,7 +800,7 @@ part of NeuroML or any standardised XML specification. -->
        </void>
       </void>
       <void property="fixedNum">
-       <float>0.5</float>
+       <float>480.0</float>
       </void>
      </void>
      <void property="reference">
