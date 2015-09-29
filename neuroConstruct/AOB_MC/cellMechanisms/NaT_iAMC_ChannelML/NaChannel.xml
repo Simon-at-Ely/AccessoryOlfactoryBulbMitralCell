@@ -28,13 +28,15 @@
         <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="120" default_erev="50" charge="1">
 
 
-            <gate name="m" instances="1">
+            <gate name="m" instances="3">
                 <closed_state id="m0"/>
                 <open_state id="m" fraction="1"/>
 
                 <time_course name="tau" from="m0" to="m" expr_form="generic" expr="1/((exp((v+58.76)/95.73))+(exp((-v-894.17)/30.70)))  "/>
-                <steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="-30" midpoint="-46.742"/>
-                   <!--steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="-17.793" midpoint="-46.742"/-->
+                        <!--steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="-30" midpoint="-46.742"/-->
+
+
+                <steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="-17.793" midpoint="-46.742"/>
 		
 	    </gate>
         
@@ -43,8 +45,10 @@
                 <open_state id="h" fraction="1"/>
                      
                 <time_course name="tau" from="h0" to="h" expr_form="generic" expr="1/((exp((v-34.14)/142.45))+(exp((-v-67.39)/10.72)))  "/>
-                <steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="14" midpoint="-41.89"/>
-		        <!--steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="7.0168" midpoint="-41.89"/-->
+                        <!--steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="14" midpoint="-41.89"/-->
+
+
+		<steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="7.0168" midpoint="-41.89"/>
 
 
 
