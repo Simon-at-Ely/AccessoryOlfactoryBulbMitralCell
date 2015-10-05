@@ -976,7 +976,7 @@ part of NeuroML or any standardised XML specification. -->
     <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig0">
      <void property="cellGroups">
       <void method="add">
-       <string>CellGroup_1</string>
+       <string>CellGroup_0</string>
       </void>
      </void>
      <void property="description">
@@ -987,8 +987,42 @@ part of NeuroML or any standardised XML specification. -->
      </void>
      <void property="plots">
       <void method="add">
-       <string>CellGroup_1_v</string>
+       <string>CellGroup_0_v</string>
       </void>
+      <void method="add">
+       <string>Var_0</string>
+      </void>
+      <void method="add">
+       <string>Var_1</string>
+      </void>
+      <void method="add">
+       <string>Var_2</string>
+      </void>
+      <void method="add">
+       <string>Var_3</string>
+      </void>
+      <void method="add">
+       <string>Var_4</string>
+      </void>
+      <void method="add">
+       <string>Var_5</string>
+      </void>
+      <void method="add">
+       <string>Var_6</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>10000.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="description">
+      <string>Have put the R-Type Calcium Channel in a separate cell while I am figuring out how to solve the scopmath library error</string>
+     </void>
+     <void property="name">
+      <string>R_Type_Calcium_Test</string>
      </void>
      <void property="simDuration">
       <float>10000.0</float>
