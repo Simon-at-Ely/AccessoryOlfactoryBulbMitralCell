@@ -4,7 +4,7 @@
     <meta:notes>AOB Mitral Cell Fast Sodium ion Channel</meta:notes>
 
 
-    <channel_type name="NaT_iAMC_ChannelML" density="yes">
+    <channel_type name="NaT_R_iAMC_ChannelML" density="yes">
         
         <status value="stable">
             <meta:comment>Sodium Fast conductance (transient, inactivating) this version (R) has activation and inactivation swapped over, from an intrinsically oscillating AOB mitral cell from parameters recorded in the lab of M. Spehr RWTH Aachen</meta:comment>
@@ -27,7 +27,7 @@
 
         <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="120" default_erev="67" charge="1">
 
-            <gate name="m" instances="3">
+            <gate name="m" instances="1">
                 <closed_state id="m0"/>
                 <open_state id="m" fraction="1"/>
                      

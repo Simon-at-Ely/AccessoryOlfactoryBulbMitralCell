@@ -43,7 +43,7 @@
 	<meta:uri>http://senselab.med.yale.edu/senselab/NeuronDB/channelGene2.htm#table3</meta:uri>
       </meta:neuronDBref>
 
-      <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="0.179811" default_erev="-0.08">
+      <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="0.15" default_erev="-0.0865">
 
 	<conc_dependence name="Calcium" ion="ca" charge="2" variable_name="ca_conc" min_conc="7.55e-7" max_conc="0.050"/>
 

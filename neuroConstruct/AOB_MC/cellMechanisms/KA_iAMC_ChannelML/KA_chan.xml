@@ -30,14 +30,14 @@
 
 
 
-      <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="4" default_erev="-80">
+      <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="4" default_erev="-86.5">
       
 	<gate name="m" instances="1">
 	  <closed_state id="m0"/>
 	  <open_state id="m"/>
 
 	  <time_course name="tau" from="m0" to="m" expr_form="generic" expr="(1+4*exp(-((v-32)/50)^2))"/>
-	  <steady_state name="inf" from="m0" to="m" expr_form="sigmoid" rate="1" scale="4.4" midpoint="-35.7"/>
+	  <steady_state name="inf" from="m0" to="m" expr_form="sigmoid" rate="1" scale="4.4" midpoint="-25.7"/>
 
 	</gate>
 
@@ -46,7 +46,7 @@
 	  <open_state id="h"/>
 
 	  <time_course name="tau" from="h0" to="h" expr_form="generic" expr="(1+100*exp(-((v-10)/40)^2))"/>
-	  <steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="-4.4" midpoint="-35.8"/>
+	  <steady_state name="inf" from="h0" to="h" expr_form="sigmoid" rate="1" scale="-4.4" midpoint="-25.8"/>
 
 	</gate>
       </current_voltage_relation>
