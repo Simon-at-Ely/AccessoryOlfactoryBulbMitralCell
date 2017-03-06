@@ -1,0 +1,10 @@
+*.bak
+x86_64
+*.log
+neuroConstruct/AOB_MC/generatedMOOSE
+neuroConstruct/AOB_MC/generatedNEURON
+neuroConstruct/AOB_MC/generatedGENESIS
+neuroConstruct/AOB_MC/generatedNeuroML
+neuroConstruct/AOB_MC/generatedNeuroML2
+neuroConstruct/AOB_MC/simulations
+neuroConstruct/AOB_MC/importedMorphologies

@@ -671,7 +671,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_14</string>
+      <string>GraphWin_15</string>
      </void>
      <void property="maxValue">
       <float>1.0E-8</float>
@@ -686,7 +686,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="valuePlotted">
-      <string>NaP_iAMC_ChannelML:CURR_DENS:na</string>
+      <string>NaP_iAMC_ChannelML:COND_DENS:na</string>
      </void>
     </object>
    </void>
@@ -699,7 +699,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_1</string>
+      <string>GraphWin_16</string>
      </void>
      <void property="maxValue">
       <float>2.5E-7</float>
@@ -714,7 +714,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="valuePlotted">
-      <string>NaxSH10_ChannelML:CURR_DENS:na</string>
+      <string>NaxSH10_ChannelML:COND_DENS:na</string>
      </void>
     </object>
    </void>
@@ -742,7 +742,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="valuePlotted">
-      <string>Kdr_ChannelML:CURR_DENS:k</string>
+      <string>Kdr_ChannelML:COND_DENS:k</string>
      </void>
     </object>
    </void>
@@ -770,7 +770,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="valuePlotted">
-      <string>KA_iAMC_ChannelML:CURR_DENS:k</string>
+      <string>KA_iAMC_ChannelML:COND_DENS:k</string>
      </void>
     </object>
    </void>
@@ -798,7 +798,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="valuePlotted">
-      <string>Gran_KCa_98:CURR_DENS:k</string>
+      <string>Gran_KCa_98:COND_DENS:k</string>
      </void>
     </object>
    </void>
@@ -826,7 +826,7 @@ part of NeuroML or any standardised XML specification. -->
       <string>0</string>
      </void>
      <void property="valuePlotted">
-      <string>Gran_CaHVA_98:CURR_DENS:ca</string>
+      <string>Gran_CaHVA_98:COND_DENS:ca</string>
      </void>
     </object>
    </void>
@@ -976,7 +976,7 @@ part of NeuroML or any standardised XML specification. -->
     <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig0">
      <void property="cellGroups">
       <void method="add">
-       <string>CellGroup_1</string>
+       <string>CellGroup_0</string>
       </void>
      </void>
      <void property="description">
@@ -987,8 +987,42 @@ part of NeuroML or any standardised XML specification. -->
      </void>
      <void property="plots">
       <void method="add">
-       <string>CellGroup_1_v</string>
+       <string>CellGroup_0_v</string>
       </void>
+      <void method="add">
+       <string>Var_0</string>
+      </void>
+      <void method="add">
+       <string>Var_1</string>
+      </void>
+      <void method="add">
+       <string>Var_2</string>
+      </void>
+      <void method="add">
+       <string>Var_3</string>
+      </void>
+      <void method="add">
+       <string>Var_4</string>
+      </void>
+      <void method="add">
+       <string>Var_5</string>
+      </void>
+      <void method="add">
+       <string>Var_6</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>10000.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="description">
+      <string>Have put the R-Type Calcium Channel in a separate cell while I am figuring out how to solve the scopmath library error</string>
+     </void>
+     <void property="name">
+      <string>R_Type_Calcium_Test</string>
      </void>
      <void property="simDuration">
       <float>10000.0</float>

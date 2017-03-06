@@ -52,7 +52,7 @@
 	<open_state id="h"/>
 
                 <time_course name="tau" from="h0" to="h" expr_form="generic" expr="10.8 + (3.0 * (exp(-1 * ((v+20)/8.13))))"/>
-                <steady_state name="inf" from="h0" to="h" expr_form="generic" expr="1/1+(exp(-1 * (v-(-38.037))/-2.0914)) + 0.6928/1+(exp(-1 * (v-(-38.037))/2.0914))"/>
+                <steady_state name="inf" from="h0" to="h" expr_form="generic" expr="1/(1+(exp(-1 * (v-(-38.037))/-2.0914))) + 0.6928/(1+(exp(-1 * (v-(-38.037))/2.0914)))"/>
 
       </gate>
     </current_voltage_relation>
