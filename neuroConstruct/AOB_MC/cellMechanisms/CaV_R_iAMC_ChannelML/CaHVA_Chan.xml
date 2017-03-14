@@ -42,8 +42,8 @@
 	<closed_state id="m0"/>
 	<open_state id="m"/>
 
-                <time_course name="tau" from="m0" to="m" expr_form="generic" expr="3.1738 + (25.238 * (exp(-1 * ((v+30)/17.498))))"/>
-                <steady_state name="inf" from="m0" to="m" expr_form="sigmoid" rate="1" scale="2.0914" midpoint="-38.037"/>
+                <time_course name="tau" from="m0" to="m" expr_form="generic" expr="v &lt; -30 ? 28.4118 : 3.1738 + (25.238 * (exp(-1 * ((v + 30)/17.498))))"/>
+                <steady_state name="inf" from="m0" to="m" expr_form="sigmoid" rate="1" scale="-2.0914" midpoint="-38.037"/>
 
       </gate>
 
@@ -51,8 +51,8 @@
 	<closed_state id="h0"/>
 	<open_state id="h"/>
 
-                <time_course name="tau" from="h0" to="h" expr_form="generic" expr="10.8 + (3.0 * (exp(-1 * ((v+20)/8.13))))"/>
-                <steady_state name="inf" from="h0" to="h" expr_form="generic" expr="1/(1+(exp(-1 * (v-(-38.037))/-2.0914))) + 0.6928/(1+(exp(-1 * (v-(-38.037))/2.0914)))"/>
+                <time_course name="tau" from="h0" to="h" expr_form="generic" expr="v &lt; -30 ? 21.0638148543 : 10.8 + (3.0 * (exp(-1 * ((v+20)/8.13))))"/>
+                <steady_state name="inf" from="h0" to="h" expr_form="generic" expr="((1/(1+(exp(-1 * (v-(-38.037))/-2.0914)))) + (0.6928/(1+(exp(-1 * (v-(-38.037))/2.0914)))))"/>
 
       </gate>
     </current_voltage_relation>
