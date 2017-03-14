@@ -9,7 +9,11 @@ part of NeuroML or any standardised XML specification. -->
 
  <object class="ucl.physiol.neuroconstruct.project.BasicProjectInfo">
   <void property="projectDescription">
-   <string>Model of an intrinsically bursting Accessory Olfactory Bulb Mitral Cell </string>
+   <string>Model of an intrinsically bursting Accessory Olfactory Bulb Mitral Cell
+
+Developed for support of the paper http://www.jneurosci.org/content/36/11/3127
+
+Simulation Configurations are given to generate Figure10H2Top and Figure10H3Top (see Generate tab) </string>
   </void>
   <void property="projectFileVersion">
    <string>neuroConstruct v1.7.1</string>
